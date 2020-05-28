@@ -4,11 +4,38 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.re.kitri.hello.dao.UserDao">
-    <select id="insertUser"
-            parameterType="User"
+    <insert id="insertUser"
+            parameterType="kr.re.kitri.hello.model.User">
+        INSERT INTO user (user_id, name, age)
+        VALUES(#{userId}, #{name}, #{age})
+
+    </insert>
+
+    <select id="selectAllUsers"
             resultType="kr.re.kitri.hello.model.User">
 
+        SELECT
+             user_id    as userId
+            ,name       as name
+            ,age        as age
+        FROM
+            user
+        ORDER BY
+            user_id
+    </select>
 
+    <select id="selectUserByUserId"
+            parameterType="String"
+            resultType="kr.re.kitri.hello.model.User">
+
+        select
+            user_id    as userId
+            ,name       as name
+            ,age        as age
+        from
+            user
+        where
+            user_id = #{value}
     </select>
 
 </mapper>
