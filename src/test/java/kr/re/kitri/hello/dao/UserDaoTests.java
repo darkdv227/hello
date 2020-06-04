@@ -16,12 +16,6 @@ public class UserDaoTests {
     private UserDao userDao;
 
     @Test
-    public void testInsertUser() {
-        User user = new User("ryu","hyunjin", 32);
-        userDao.insertUser(user);
-    }
-
-    @Test
     public void testSelectAllUsers() {
         List<User> users = userDao.selectAllUsers();
         assertTrue(users.size() > 0);

@@ -1,24 +1,18 @@
 package kr.re.kitri.hello.model;
 
 public class User {
-    private String userId;
+    private String id;
     private String name;
-    private Integer age;
+    private String type;
 
     public User() {}
 
-    public User(String userId, String name, Integer age) {
-        this.userId = userId;
-        this.name = name;
-        this.age = age;
+    public String getId() {
+        return id;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -29,20 +23,20 @@ public class User {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getType() {
+        return type;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "userId='" + userId + '\'' +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", type='" + type + '\'' +
                 '}';
     }
 }
