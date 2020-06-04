@@ -1,6 +1,5 @@
 package kr.re.kitri.hello.aspect;
 
-import kr.re.kitri.hello.Annotation.TokenRequired;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -36,8 +35,4 @@ public class KitriAspect {
         return obj;
     }
 
-    @Before("@annotation(tokenRequired)")
-    public void test(TokenRequired tokenRequired) {
-        logger.info("토큰이 적용되어야 합니다..........");
-    }
 }
